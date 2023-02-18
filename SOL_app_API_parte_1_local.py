@@ -27,6 +27,9 @@ def get_predict():
 
     # Get POST JSON data
     data = request.get_json()
+    if data == None:
+        data = request.args #Si no tiene datos, recupera los argumentos
+
     tv = data.get("TV",0)
     radio = data.get("radio",0)
     newspaper = data.get("newspaper",0)
@@ -56,9 +59,7 @@ def return_predict():
 #Mensaje
 @app.route("/", methods=['GET'])
 def print_mensaje():
-
-    #Print el mensaje
-    print("Hola soy tu predictor. Si no me dejas nada que predecir, cierra la puerta al salir")
+    return "Hola soy tu predictor, si no me das nada para predecir, cierra la puerta al salir"
 
 
 
