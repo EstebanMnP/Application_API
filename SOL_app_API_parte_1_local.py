@@ -26,8 +26,8 @@ def get_predict():
     crs = conn.cursor()
 
     # Get POST JSON data
-    data = request.get_json()
-    if type(data) != dict:
+    data = request.get_json(silent= True)
+    if data == dict:
         data = request.args #Si no tiene datos, recupera los argumentos
 
     tv = data.get("TV",0)
