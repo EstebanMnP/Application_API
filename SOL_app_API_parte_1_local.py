@@ -15,7 +15,7 @@ model = pickle.load(open(root + 'advertising.model', 'rb'))
 print(model.coef_)
 
 # POST {"TV":, "radio":, "newspaper":} -> It returns the sales prediction for input investments
-@app.route('/predict', methods=['POST'])
+@app.route('/predict', methods=['POST', 'GET'])
 def get_predict():
 
     # Get current time for the PREDICTIONS table
