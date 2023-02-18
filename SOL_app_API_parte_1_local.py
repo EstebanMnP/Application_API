@@ -27,7 +27,7 @@ def get_predict():
 
     # Get POST JSON data
     data = request.get_json()
-    if data == None:
+    if type(data) != dict:
         data = request.args #Si no tiene datos, recupera los argumentos
 
     tv = data.get("TV",0)
