@@ -22,7 +22,7 @@ def get_predict():
     str_time = datetime.now().strftime("%d-%m-%Y %H:%M:%S")
 
     # Establish SQLITE3 connection
-    conn = sqlite3.connect(root_db)
+    conn = sqlite3.connect(root_db + "advertising.db")
     crs = conn.cursor()
 
     # Get POST JSON data
