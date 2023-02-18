@@ -61,6 +61,3 @@ def return_predict():
 def print_mensaje():
     return "Hola soy tu predictor, si no me das nada para predecir, cierra la puerta al salir"
 
-
-
-#app.run(port=4000)
